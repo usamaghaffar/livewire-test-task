@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use Livewire\Attributes\Reactive;
 use Livewire\Component;
 
 /**
@@ -14,6 +15,7 @@ class TabsHeader extends Component
      *
      * @var string
      */
+    #[Reactive]
     public $activeTab;
 
     /**
@@ -45,7 +47,7 @@ class TabsHeader extends Component
      */
     public function setActiveTab($tab)
     {
-        $this->activeTab = $tab;
+        // $this->activeTab = $tab;
         $this->dispatch('setTab', $tab);
     }
 }
