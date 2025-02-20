@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Enums\InvoiceStatus;
 use App\Models\Invoice;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -19,10 +20,10 @@ class InvoiceFactory extends Factory
     public function definition(): array
     {
         return [
-            'invoice_number' => 'INV-' . $this->faker->unique()->randomNumber(5),
+            'invoice_number' => 'INV-' . $this->faker->unique()->numerify('#####'),
             'amount' => $this->faker->randomFloat(2, 50, 1000),
             'customer_email' => $this->faker->safeEmail(),
-            'status' => $this->faker->randomElement(['Draft', 'Outstanding', 'Paid']),
+            'status' => $this->faker->randomElement(InvoiceStatus::cases()),
             'created_date' => $this->faker->date(),
         ];
     }

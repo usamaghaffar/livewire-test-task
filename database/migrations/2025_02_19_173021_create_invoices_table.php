@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('invoice_number')->unique();
             $table->decimal('amount', 10, 2);
             $table->string('customer_email');
-            $table->enum('status', ['Draft', 'Outstanding', 'Paid']);
+            $table->enum('status', \App\Enums\InvoiceStatus::values())->default(\App\Enums\InvoiceStatus::DRAFT->value);
             $table->date('created_date');
             $table->timestamps();
         });

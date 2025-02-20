@@ -1,11 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Livewire\InvoiceDashboard;
+use App\Livewire\InvoiceDashboard;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', InvoiceDashboard::class);
 
 Route::middleware([
     'auth:sanctum',
@@ -18,8 +16,8 @@ Route::middleware([
 });
 
 
-Route::get('/invoices', function () {
-    return view('invoices.index'); // Load a Blade view
-})->name('invoices.index');
+// Route::get('/invoices', function () {
+//     return view('invoices.index'); // Load a Blade view
+// })->name('invoices.index');
 
 // Route::get('/invoices', InvoiceDashboard::class)->name('invoices.index');

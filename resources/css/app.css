@@ -5,3 +5,8 @@
 [x-cloak] {
     display: none;
 }
+
+span[aria-current="page"] span {
+    font-weight: bold;
+    @apply bg-blue-800 text-white;
+}
