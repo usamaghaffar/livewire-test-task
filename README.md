@@ -7,8 +7,39 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+## Installation
 
+Clone the repo 
+```
+git clone git@github.com:usamaghaffar/livewire-test-task.git
+```
+
+The run the following commands
+
+```
+cp .env.example .env
+composer install
+php artisan key:generate
+```
+The setup the Database credentials in `.env` file and run the following commands
+
+```
+php artisan migrate --seed
+
+# run the server
+php artisan serve
+```
+
+After successful migration, you would be able to view the invoices at the home route.
+
+```
+http://127.0.0.1:8000
+```
+#### Preview
+
+![preview image](./public/images/preview.png)
+
+# Laravel
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
 - [Simple, fast routing engine](https://laravel.com/docs/routing).

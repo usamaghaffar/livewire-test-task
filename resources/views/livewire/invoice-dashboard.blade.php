@@ -1,5 +1,5 @@
 <div class="mb-10">
-    <livewire:tabs-header :activeTab="$activeTab" @setTab="setTab($event)" />
+    <livewire:tabs-header :activeTab="$activeTab" />
 
     <livewire:invoices-table :invoices="$invoices->items()" />
     <div class="mt-8">

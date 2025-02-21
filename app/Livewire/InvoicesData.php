@@ -13,6 +13,8 @@ class InvoicesData extends Component
     #[Reactive]
     public $invoice = [];
 
+    public $isOpenDropdown = false;
+
     /**
      * Render the component.
      * 
@@ -21,5 +23,15 @@ class InvoicesData extends Component
     public function render()
     {
         return view('livewire.invoices-data');
+    }
+
+    /**
+     * Show the dropdown.
+     * 
+     * @return void
+     */
+    public function showDropdown()
+    {
+        $this->isOpenDropdown = true;
     }
 }
